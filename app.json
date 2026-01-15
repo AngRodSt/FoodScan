@@ -13,7 +13,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "FoodScan necesita acceso a tu cámara para escanear códigos de barras de productos alimenticios.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.angrod.Foodscan"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +26,30 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.angrod_sth.FoodScan"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir que $(PRODUCT_NAME) acceda a tu cámara para escanear códigos de barras."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f0193ef8-de82-4462-b180-04571e34425b"
+      }
+    },
+    "owner": "angrod_sth"
   }
 }
